@@ -66,6 +66,7 @@
                               <th>Numero de documento</th>
                               <th>Email</th>
                               <th>Celular</th>
+                              <th>Direccion</th>
                               <th width="8%">Estado</th>
                               <th width="10%">Creado</th>
                               <th width="10%">Modificado</th>
@@ -82,11 +83,14 @@
                               </td>
                               <td>${item.getIdApoderado()}</td>
                               <td>${item.getNombres()}</td>
-                              <td>as</td>
-                              <td>${item.getTurno().getNombreTurno()}</td>
-                              <td>${item.getSeccion().getNombreSeccion()}</td>
-                              <td>${item.getVacantes()}</td>
-                              <td>${item.getEstadoString()}</td>                              
+                              <td>${item.getApellidoPaterno()}</td>
+                              <td>${item.getApellidoMaterno()}</td>
+                              <td>${item.getTipoDocumento()}</td>
+                              <td>${item.getNumeroDocumento()}</td>
+                              <td>${item.getEmail()}</td>                              
+                              <td>${item.getCelular()}</td>                              
+                              <td>${item.getDireccion()}</td>
+                              <td>${item.getEstadoString()}</td>
                               <td>${item.getCreadoString()}</td>
                               <td>${item.getModificadoString()}</td>
                             </tr>

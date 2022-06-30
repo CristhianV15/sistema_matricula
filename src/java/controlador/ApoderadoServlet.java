@@ -44,7 +44,7 @@ public class ApoderadoServlet extends HttpServlet {
             throws ServletException, IOException {
         
         Modulo modulo = new Modulo();
-        modulo.setTitulos("Apoderado");
+        modulo.setTitulos("Apoderados");
         modulo.setTitulo("Apoderado");
         modulo.setPathView(pathView);
         modulo.setPathUrl(pathUrl);
@@ -61,7 +61,6 @@ public class ApoderadoServlet extends HttpServlet {
                 List<Apoderado> listado = apoderadodao.all();
                 request.setAttribute("listado", listado);
                 vista = pathView+"list.jsp";
-                System.out.println("cantida dde registros"+listado.size());
                 this.getServletContext().getRequestDispatcher(vista).include(request, response);
                 break;
             case "agregar":
@@ -85,7 +84,7 @@ public class ApoderadoServlet extends HttpServlet {
                     String email = request.getParameter("emailA");
                     String celular= request.getParameter("celularA");
                     String direccion = request.getParameter("direccionA");
-                    int estado = Integer.parseInt(request.getParameter("estado"));
+                    int estado = 1; //Defecto = activo
                     Timestamp creado = Timestamp.valueOf(LocalDateTime.now());
                     Apoderado obj = new Apoderado();
                     obj.setNombres(nombre);

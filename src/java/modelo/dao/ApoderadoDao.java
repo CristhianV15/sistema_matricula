@@ -26,23 +26,24 @@ public class ApoderadoDao {
     PreparedStatement ps;
     ResultSet rs;
 
-    public boolean add(Apoderado apo) {
+    public boolean add(Apoderado obj) {
         try {
             String sql = "insert into apoderado(nombres, apellidoPaterno, apellidoMaterno, tipoDocumento, numeroDocumento, email, celular, direccion, estado, creado) values(?,?,?,?,?,?,?,?,?,?)";
             con = cn.getConexion();
             ps = con.prepareStatement(sql);
-            ps.setString(1, apo.getNombres());
-            ps.setString(2, apo.getApellidoPaterno());
-            ps.setString(3, apo.getApellidoMaterno());
-            ps.setString(4, apo.getTipoDocumento());
-            ps.setString(5, apo.getNumeroDocumento());
-            ps.setString(6, apo.getEmail());
-            ps.setString(7, apo.getCelular());
-            ps.setString(8, apo.getDireccion());
-            ps.setTimestamp(9, apo.getCreado());
+            ps.setString(1, obj.getNombres());
+            ps.setString(2, obj.getApellidoPaterno());
+            ps.setString(3, obj.getApellidoMaterno());
+            ps.setString(4, obj.getTipoDocumento());
+            ps.setString(5, obj.getNumeroDocumento());
+            ps.setString(6, obj.getEmail());
+            ps.setString(7, obj.getCelular());
+            ps.setString(8, obj.getDireccion());
+            ps.setInt(9, obj.getEstado());
+            ps.setTimestamp(10, obj.getCreado());
             ps.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(GradoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ApoderadoDao.class.getName()).log(Level.SEVERE, null, ex);
         }        
         return false;
     }
@@ -56,7 +57,7 @@ public class ApoderadoDao {
             ps.setInt(1, idApoderado);
             ps.executeUpdate();
         } catch (SQLException ex) {
-            Logger.getLogger(GradoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ApoderadoDao.class.getName()).log(Level.SEVERE, null, ex);
         }        
         return false;
     }
@@ -81,11 +82,11 @@ public class ApoderadoDao {
                 obj.setDireccion(rs.getString("direccion"));
                 obj.setEstado(rs.getInt("estado"));
                 obj.setCreado(rs.getTimestamp("creado"));
+                obj.setModificado(rs.getTimestamp("modificado"));
                 lista.add(obj);           
-                System.out.println("datos" + obj.getApellidoMaterno());
             }
         } catch (SQLException ex) {
-            Logger.getLogger(GradoDao.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ApoderadoDao.class.getName()).log(Level.SEVERE, null, ex);
         }        
         return lista;
     }

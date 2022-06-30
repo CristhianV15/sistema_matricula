@@ -72,7 +72,7 @@ public class Apoderado {
     public String getTipoDocumento() {
         return this.tipoDocumento;
     }
-       public String getEstadoString() {
+    public String getEstadoString() {
         String est = "";
         List<DbEstado> estados = (new DbEstado()).getEstadosAll();
         for (int i = 0; i < estados.size(); i++) {
@@ -137,9 +137,17 @@ public class Apoderado {
         this.modificado = modificado;
     }
 
-
-
-
+    public String getCreadoString(){
+        return new SimpleDateFormat("dd/MM/yyyy KK:mm a").format(this.creado);
+    }
+   
+    public String getModificadoString(){
+        if (this.modificado==null) {
+            return "";
+        }else{
+            return new SimpleDateFormat("dd/MM/yyyy KK:mm a").format(this.modificado);
+        }        
+    }
 }
 
 
