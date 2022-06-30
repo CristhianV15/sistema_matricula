@@ -28,6 +28,10 @@
         <servlet-name>GradoServlet</servlet-name>
         <servlet-class>controlador.GradoServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ApoderadoServlet</servlet-name>
+        <servlet-class>controlador.ApoderadoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SalonServlet</servlet-name>
         <url-pattern>/salon</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>GradoServlet</servlet-name>
         <url-pattern>/grado</url-pattern>
+    </servlet-mapping>
+     <servlet-mapping>
+        <servlet-name>ApoderadoServlet</servlet-name>
+        <url-pattern>/apoderado</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

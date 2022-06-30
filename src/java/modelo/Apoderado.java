@@ -24,12 +24,11 @@ public class Apoderado {
      private Integer estado;
      private Timestamp creado;
      private Timestamp modificado;
-     private Set<Alumno> alumnos = new HashSet<Alumno>(0);
 
     public Apoderado() {
     }
 
-    public Apoderado(String nombres, String apellidoPaterno, String apellidoMaterno, String tipoDocumento, String numeroDocumento, String email, String celular, String direccion, Integer estado, Timestamp creado, Timestamp modificado, Set<Alumno> alumnos) {
+    public Apoderado(String nombres, String apellidoPaterno, String apellidoMaterno, String tipoDocumento, String numeroDocumento, String email, String celular, String direccion, Integer estado, Timestamp creado) {
        this.nombres = nombres;
        this.apellidoPaterno = apellidoPaterno;
        this.apellidoMaterno = apellidoMaterno;
@@ -40,8 +39,6 @@ public class Apoderado {
        this.direccion = direccion;
        this.estado = estado;
        this.creado = creado;
-       this.modificado = modificado;
-       this.alumnos = alumnos;
     }
    
     public Integer getIdApoderado() {
@@ -74,6 +71,17 @@ public class Apoderado {
     }
     public String getTipoDocumento() {
         return this.tipoDocumento;
+    }
+       public String getEstadoString() {
+        String est = "";
+        List<DbEstado> estados = (new DbEstado()).getEstadosAll();
+        for (int i = 0; i < estados.size(); i++) {
+            if ( estados.get(i).getId() == this.estado ) {
+                est = estados.get(i).getNombre();
+                break;
+            }
+        }
+        return est;
     }
     
     public void setTipoDocumento(String tipoDocumento) {
@@ -114,7 +122,7 @@ public class Apoderado {
     public void setEstado(Integer estado) {
         this.estado = estado;
     }
-    public Date getCreado() {
+    public Timestamp getCreado() {
         return this.creado;
     }
     
@@ -127,13 +135,6 @@ public class Apoderado {
     
     public void setModificado(Timestamp modificado) {
         this.modificado = modificado;
-    }
-    public Set<Alumno> getAlumnos() {
-        return this.alumnos;
-    }
-    
-    public void setAlumnos(Set<Alumno> alumnos) {
-        this.alumnos = alumnos;
     }
 
 

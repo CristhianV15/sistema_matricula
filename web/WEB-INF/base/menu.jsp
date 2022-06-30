@@ -65,6 +65,11 @@
                           <i class="fa fa-circle-o"></i> <span>Usuarios</span>
                         </a>
                       </li>
+                      <li class="treeview <c:if test="${modulo.getMenuItem() == 'apoderado'}">active</c:if> ">
+                        <a href="./apoderado">
+                          <i class="fa fa-circle-o"></i> <span>Apoderado</span>
+                        </a>
+                      </li>
 <!--                      <li class="treeview <c:if test="${modulo.getMenuItem() == 'micuenta'}">active</c:if> ">
                         <a href="./micuenta">
                           <i class="fa fa-circle-o"></i> <span>Mi Cuenta</span>
