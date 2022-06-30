@@ -48,7 +48,30 @@ public class ApoderadoDao {
         return false;
     }
 
-    
+       public boolean update(Apoderado ap) {
+        try {            
+            String sql = "update apoderado set nombres=?, apellidoPaterno=?, apellidoMaterno=?, tipoDocumento=?, numeroDocumento=?, email=?, celular=?, direccion=?, estado=?, modificado=NOW() where idApoderado=?";
+            System.out.println("sql: " + sql);
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setString(1, ap.getNombres());
+            ps.setString(2, ap.getApellidoMaterno());
+            ps.setString(3, ap.getApellidoPaterno());
+            ps.setString(4, ap.getTipoDocumento());
+            ps.setString(5, ap.getNumeroDocumento());
+            ps.setString(6, ap.getEmail());
+            ps.setString(7, ap.getCelular());
+            ps.setString(8, ap.getDireccion());
+            ps.setInt(9, ap.getEstado());
+            ps.setInt(10, ap.getIdApoderado());
+            ps.executeUpdate();
+        } catch (SQLException ex) {
+            System.err.println("Error: " + ex.getMessage());
+            Logger.getLogger(SalonDao.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+        return false;
+    }
+
     public boolean delete(int idApoderado) {
         try {
             String sql = "update apoderado set estado=0 where idApoderado=?";
@@ -90,7 +113,37 @@ public class ApoderadoDao {
         }        
         return lista;
     }
-
+    
+      public Apoderado findOne(int idApoderado) {
+        Apoderado obj = null;
+        try {
+            String sql = "select * from apoderado where estado!=0 and idApoderado=?";
+            System.out.println("sql: " + sql);
+            con = cn.getConexion();
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, idApoderado);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                obj = new Apoderado();
+                 obj.setIdApoderado(rs.getInt("idApoderado"));
+                obj.setNombres(rs.getString("nombres"));
+                obj.setApellidoPaterno(rs.getString("apellidoPaterno"));
+                obj.setApellidoMaterno(rs.getString("apellidoMaterno"));
+                obj.setTipoDocumento(rs.getString("tipoDocumento"));
+                obj.setNumeroDocumento(rs.getString("numeroDocumento"));
+                obj.setEmail(rs.getString("email"));
+                obj.setCelular(rs.getString("celular"));
+                obj.setDireccion(rs.getString("direccion"));
+                obj.setEstado(rs.getInt("estado"));
+                obj.setCreado(rs.getTimestamp("creado"));
+                obj.setModificado(rs.getTimestamp("modificado"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(GradoDao.class.getName()).log(Level.SEVERE, null, ex);
+        }        
+        return obj;
+    }
+    
 
 
 }

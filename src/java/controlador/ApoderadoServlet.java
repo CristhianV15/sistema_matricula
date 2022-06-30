@@ -105,7 +105,53 @@ public class ApoderadoServlet extends HttpServlet {
                     System.err.println("Error: " + ex.getMessage());
                 } 
                 break;            
-           
+              case "editar":
+                try {                               
+                    int id = Integer.parseInt(request.getParameter("id"));
+                    ApoderadoDao objdao = new ApoderadoDao();
+                    Apoderado obj = objdao.findOne(id);
+                    request.setAttribute("obj", obj);
+                    System.out.println(obj.getNombres());
+                    List<DbEstado> estados = (new DbEstado()).getEstados();
+                    request.setAttribute("estados", estados);
+                    
+                    vista = pathView+"edit.jsp";
+                }  catch (NumberFormatException ex) {
+                    System.err.println("Error: " + ex.getMessage());
+                }       
+                this.getServletContext().getRequestDispatcher(vista).include(request, response);
+                break;                        
+            case "editar-guardar":
+                try {                       
+                    int id = Integer.parseInt(request.getParameter("id"));                    
+                    ApoderadoDao objdao = new ApoderadoDao();
+                    Apoderado obj = objdao.findOne(id);                                        
+                    String nombre = request.getParameter("nombreA");
+                    String apellidoPa = request.getParameter("apellidoPA");
+                    String apellidoMa = request.getParameter("apellidoMA");
+                    String tipoDocumento = request.getParameter("tipoDocumentoA");
+                    String numDocumento = request.getParameter("numDocumentoA");
+                    String email = request.getParameter("emailA");
+                    String celular= request.getParameter("celularA");
+                    String direccion = request.getParameter("direccionA");
+                    int estado = 1; //Defecto = activo                    
+                    obj.setNombres(nombre);
+                    obj.setApellidoPaterno(apellidoPa);
+                    obj.setApellidoMaterno(apellidoMa);
+                    obj.setTipoDocumento(tipoDocumento);
+                    obj.setNumeroDocumento(numDocumento);
+                    obj.setEmail(email);
+                    obj.setCelular(celular);
+                    obj.setDireccion(direccion);
+                    obj.setEstado(estado);
+                    objdao.update(obj);
+                    Mensaje mensaje = new Mensaje(request);
+                    mensaje.setMsg("Actualizado correctamente");                
+                    response.sendRedirect(pathUrl);
+                }  catch (IOException | NumberFormatException ex) {
+                    System.err.println("Error: " + ex.getMessage());
+                } 
+                break;
             case "eliminar":
                 try {                       
                     int id = Integer.parseInt(request.getParameter("id"));                    

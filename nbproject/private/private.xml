@@ -3,31 +3,32 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/apoderado/add.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/web.xml</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/Grado.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/controlador/util/Modulo.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/base/mensaje.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/index.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/base/footer-top.jsp</file>
-            <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/controlador/ApoderadoServlet.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/salon/list.jsp</file>
+            <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/grado/list.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/dao/GradoDao.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/base/footer.jsp</file>
-            <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/apoderado/edit.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/salon/edit.jsp</file>
+            <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/Salon.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/Apoderado.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/Ciclo.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/util/DbEstado.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/base/top.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/dao/SalonDao.java</file>
+            <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/Matricula.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/controlador/util/Mensaje.java</file>
+            <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/salon/add.jsp</file>
+            <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/controlador/TurnoServlet.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/base/header.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/controlador/GradoServlet.java</file>
-            <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/apoderado/list.jsp</file>
+            <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/controlador/SalonServlet.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/base/menu.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/Alumno.java</file>
-            <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/dao/ApoderadoDao.java</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/web/WEB-INF/grado/add.jsp</file>
             <file>file:/C:/xampp/htdocs/sistema_matricula/src/java/modelo/dao/CicloDao.java</file>
         </group>
