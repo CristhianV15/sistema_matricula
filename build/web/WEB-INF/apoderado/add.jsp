@@ -29,7 +29,7 @@
                 <li class="active"><a href="${modulo.getPathUrl()}">${modulo.getTitulo()}</a></li>
               </ol>
             </section>
-
+              
             <!-- Main content -->
             <section class="content">
               <div class="row">
@@ -44,7 +44,7 @@
                         <div class="box-body">
                           <div class="form-group">
                             <label>Nombres</label>
-                            <input type="text" class="form-control" name="nombreA"  required>
+                            <input type="text" class="form-control" name="nombreA" value="#{managedApoderado.apoderado.nombres}" required>
                           </div>
                             <div class="form-group">
                             <label>Apellidos Paternos</label>
